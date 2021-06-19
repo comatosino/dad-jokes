@@ -20,6 +20,8 @@ const getJoke = () => {
     .then(data => jokeBox.textContent = data.joke);
 }
 
+// add event listener to button
+// maybe change to refresh page on click to fetch new image and quote?
 jokeBtn.addEventListener("click", getJoke);
 
 getJoke();
