@@ -5,19 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Dad Jokes</title>
 </head>
 
 <body>
+    <div class="loader">
+        <div></div>
+    </div>
 
-    <img id="beard-box" src="https://placebeard.it/g/600/400" alt="bearded fellow">
+    <div class="content">
+        <img id="beard-box" src="https://placebeard.it/g/600/400" alt="bearded fellow">
 
-    <p id="joke-box"></p>
+        <p id="joke-box"></p>
 
-    <button id="get-joke" type="button" style="display:block">Get a new dad joke!</button>
-
-    <script src="./assets/script.js"></script>
+        <button id="get-joke" type="button" style="display:block">Get a new dad joke!</button>
+    </div>
     
+    <script src="./assets/script.js"></script>
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1000);
+            $(".content").fadeIn(1000);
+        });
+    </script>
 </body>
 
 </html>
