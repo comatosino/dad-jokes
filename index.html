@@ -5,19 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Dad Jokes</title>
 </head>
 
 <body>
 
-    <img id="beard-box" src="https://placebeard.it/g/600/400" alt="bearded fellow">
+    <section class="loader"><section></section></section>
 
-    <p id="joke-box"></p>
+    <section class="content">
 
-    <button id="get-joke" type="button" style="display:block">Get a new dad joke!</button>
+        <header>
+            <h1>Bearded Dad Jokes</h1>
+        </header>
 
+
+        <img id="beard-box" src="https://placebeard.it/g/360/480" alt="bearded fellow">
+
+        
+        <!-- changed to click on img to fetch new data -->
+        <!-- <button id="get-joke" type="button">Get a new dad joke!</button> -->
+
+        <footer>
+            <p id="joke-box"></p>
+        </footer>
+
+    </section>
+
+    <!-- link to fetch script and button event listener -->
     <script src="./assets/script.js"></script>
-    
+
+    <!-- use jQuery to fade out loader and fade in content when content is ready -->
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1000);
+            $(".content").fadeIn(1000);
+        });
+    </script>
 </body>
 
 </html>

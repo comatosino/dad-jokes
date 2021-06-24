@@ -1,4 +1,5 @@
-const jokeBtn = document.getElementById("get-joke");
+// const jokeBtn = document.getElementById("get-joke"); // click on img to fetch new data
+
 const jokeBox = document.getElementById("joke-box");
 const beardBox = document.getElementById("beard-box");
 
@@ -18,6 +19,7 @@ fetch("https://icanhazdadjoke.com", init)
 .then(data => jokeBox.textContent = data.joke);
 
 // add event listener to button
-jokeBtn.addEventListener("click", function () {
+// refresh page to fetch new placebeard img and joke
+beardBox.addEventListener("click", function () {
   location.reload();
 });
