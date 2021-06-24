@@ -18,6 +18,7 @@ fetch("https://icanhazdadjoke.com", init)
 .then(data => jokeBox.textContent = data.joke);
 
 // add event listener to button
+// refresh page to fetch new placebeard img and joke
 jokeBtn.addEventListener("click", function () {
   location.reload();
 });
