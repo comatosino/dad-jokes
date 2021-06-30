@@ -28,7 +28,7 @@ header, footer {
     overflow: hidden;
     background-color: #000000;
     position: absolute;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
