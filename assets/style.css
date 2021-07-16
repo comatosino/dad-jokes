@@ -28,11 +28,11 @@ header, footer {
     overflow: hidden;
     background-color: #000000;
     position: absolute;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
-/* .loader > section {
+.loader > section {
     height: 100px;
     width: 100px;
     border: 15px solid #45474b;
@@ -45,10 +45,10 @@ header, footer {
     left: 0;
     right: 0;
     animation: spin 1.5s infinite linear;
-} */
+}
 
-/* @keyframes spin {
+@keyframes spin {
     100% {
         transform: rotate(360deg);
     }
-} */
+}
