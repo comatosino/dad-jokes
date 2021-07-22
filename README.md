@@ -28,7 +28,7 @@ Libraries: jQuery, placebeard.it, icanhazdadjoke API
 
 Jokes courtesy of https://icanhazdadjoke.com/api.
 
-Images courtesy of Ryan Olsen, placebeard.it, and [Texas Beard Company](https://www.texasbeardcompany.com/).
+Images courtesy of Ryan Olsen, [placebeard.it](https://placebeard.it/), and [Texas Beard Company](https://www.texasbeardcompany.com/).
 
 Button styling courtesy of [Federico Dossena](https://fdossena.com/).
 
