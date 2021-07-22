@@ -22,14 +22,13 @@
             <h1>Dad Jokes</h1>
         </header>
 
-        <img id="beard-box" src="https://placebeard.it/g/360/480" alt="bearded fellow">
-
-        <!-- changed to click on img to fetch new data -->
-        <!-- <button id="get-joke" type="button">Get a new dad joke!</button> -->
+        <img id="beard-box" src="https://placebeard.it/g/360/480/notag" alt="bearded fellow">
 
         <footer>
             <p id="joke-box"></p>
         </footer>
+
+        <a href="#" id="joke-btn" class="button1">Get another dad joke!</a>
 
     </section>
 
@@ -40,7 +39,10 @@
     <script>
         $(window).on('load',function(){
             $(".loader").fadeOut(1000);
-            $(".content").fadeIn(1000);
+
+            // fade-inchained with hide method so that flexbox can be used
+            // instead of the default display:block
+            $(".content").hide().fadeIn(1000);
         });
     </script>
 </body>

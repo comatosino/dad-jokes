@@ -1,7 +1,7 @@
 // const jokeBtn = document.getElementById("get-joke"); // click on img to fetch new data
 
 const jokeBox = document.getElementById("joke-box");
-const beardBox = document.getElementById("beard-box");
+const jokeBtn = document.getElementById("joke-btn");
 
 // fetch a random joke from https://icanhazdadjoke.com/
 // add context to request
@@ -19,7 +19,7 @@ fetch("https://icanhazdadjoke.com", init)
 .then(data => jokeBox.textContent = data.joke);
 
 // add event listener to button
-// refresh page to fetch new placebeard img and joke
-beardBox.addEventListener("click", function () {
+// refreshes page to fetch new placebeard img and joke
+jokeBtn.addEventListener("click", function () {
   location.reload();
 });
