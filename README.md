@@ -10,7 +10,7 @@ Combines beards and dad jokes into one simple application! This project provided
 
 - [Usage](#Usage)
 - [Tech](#Tech)
-- [Tech](#Tech)
+- [Acknowledgements](#Acknowledgements)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -23,6 +23,14 @@ Click the image to get a new beard and joke!
 Languages: HTML, CSS, JavaScript
 
 Libraries: jQuery, placebeard.it, icanhazdadjoke API
+
+## Acknowledgements
+
+Jokes courtesy of https://icanhazdadjoke.com/api.
+
+Images courtesy of Ryan Olsen, placebeard.it, and [Texas Beard Company](https://www.texasbeardcompany.com/).
+
+Button styling courtesy of [Federico Dossena](https://fdossena.com/).
 
 ## Questions
 
