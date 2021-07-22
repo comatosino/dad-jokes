@@ -28,6 +28,8 @@
             <p id="joke-box"></p>
         </footer>
 
+        <a href="#" id="joke-btn" class="button1">Get another dad joke!</a>
+
     </section>
 
     <!-- link to fetch script and button event listener -->
@@ -38,11 +40,9 @@
         $(window).on('load',function(){
             $(".loader").fadeOut(1000);
 
-            // to override default display:block for this method
-            // change display to flex
-            $(".content").css("display", "flex")
-                         .hide()
-                         .fadeIn(1000);
+            // fade-inchained with hide method so that flexbox can be used
+            // instead of the default display:block
+            $(".content").hide().fadeIn(1000);
         });
     </script>
 </body>
