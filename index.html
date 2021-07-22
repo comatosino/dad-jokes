@@ -22,10 +22,7 @@
             <h1>Dad Jokes</h1>
         </header>
 
-        <img id="beard-box" src="https://placebeard.it/g/360/480" alt="bearded fellow">
-
-        <!-- changed to click on img to fetch new data -->
-        <!-- <button id="get-joke" type="button">Get a new dad joke!</button> -->
+        <img id="beard-box" src="https://placebeard.it/g/360/480/notag" alt="bearded fellow">
 
         <footer>
             <p id="joke-box"></p>
@@ -40,7 +37,12 @@
     <script>
         $(window).on('load',function(){
             $(".loader").fadeOut(1000);
-            $(".content").fadeIn(1000);
+
+            // to override default display:block for this method
+            // change display to flex
+            $(".content").css("display", "flex")
+                         .hide()
+                         .fadeIn(1000);
         });
     </script>
 </body>
