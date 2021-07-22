@@ -21,7 +21,8 @@ Click the image to get a new beard and joke!
 ## Tech
 
 Languages: HTML, CSS, JavaScript
-Libraries: jQuery, placebeard.it, 
+
+Libraries: jQuery, placebeard.it, icanhazdadjoke API
 
 ## Questions
 
