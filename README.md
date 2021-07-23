@@ -16,7 +16,9 @@ Combines beards and dad jokes into one simple application! This project provided
 
 ## Usage
 
-Click the image to get a new beard and joke!
+Click the gif below to check out the application!
+
+[![App gif](./assets/images/dad-jokes.gif)](https://comatosino.github.io/dad-jokes/)
 
 ## Tech
 
