@@ -25,21 +25,14 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
 }
 
-a.button1 {
-  padding: 0.35em 1.2em;
-  border: 0.1em solid #ffffff;
-  border-radius: 0.12em;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.2s;
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
 }
 
-a.button1:hover {
-  color: #000000;
-  background-color: #ffffff;
+button {
+  z-index: 999;
 }
