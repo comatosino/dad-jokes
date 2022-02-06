@@ -11,7 +11,7 @@ type JokeResponse = {
 };
 
 const App: React.FC = (): JSX.Element => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [joke, setJoke] = useState<string>();
 
   useEffect(() => {
@@ -41,9 +41,9 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <>
-      {!loaded && <Loader />}
+      <Loader loaded={loaded} />
 
-      <section className="content">
+      <section className={loaded ? "content fade-in" : "content"}>
         <header>
           <h1>Dad Jokes</h1>
         </header>
@@ -59,7 +59,10 @@ const App: React.FC = (): JSX.Element => {
           <p id="joke-box">{joke}</p>
         </footer>
 
-        <button onClick={() => window.location.reload()}>Get another dad joke!</button>
+        {/* reload the page to fetch a new image */}
+        <button onClick={() => window.location.reload()}>
+          Get another dad joke!
+        </button>
       </section>
     </>
   );
