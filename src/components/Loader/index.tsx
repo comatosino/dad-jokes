@@ -1,8 +1,12 @@
 import "./Loader.css";
 
-const Loader: React.FC = () => {
+interface LoaderProps {
+  loaded: boolean;
+}
+
+const Loader: React.FC<LoaderProps> = (props) => {
   return (
-    <section className="loader">
+    <section className={props.loaded ? "loader fade-out" : "loader"}>
       <section></section>
     </section>
   );
