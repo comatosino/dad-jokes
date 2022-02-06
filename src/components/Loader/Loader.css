@@ -28,3 +28,8 @@
     transform: rotate(360deg);
   }
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
+}
