@@ -1,46 +1,135 @@
 import { useState, useEffect } from "react";
 import API from "../../utils/api";
-import Loader from "../Loader";
-import "./App.css";
+
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Skeleton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import theme from "../../themes/theme";
 
 const App: React.FC = (): JSX.Element => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const [bothLoaded, setBothLoaded] = useState<boolean>(false);
+  const [beardReady, setBeardReady] = useState<boolean>();
+  const [beardSrc, setBeardSrc] = useState<string>();
   const [joke, setJoke] = useState<string>();
 
   useEffect(() => {
+    getBeard();
     getJoke();
   }, []);
 
+  const getBeard = () => {
+    setBeardSrc(() => "");
+    setBeardReady(false);
+    setTimeout(() => {
+      setBeardSrc(() => "https://placebeard.it/g/350/notag");
+    }, 100);
+  };
+
   const getJoke = async () => {
+    setJoke(() => "");
     const nextJoke = await API.getJoke();
-    if (!nextJoke) setJoke("Could not find a joke! Is this some kind of joke?!");
-    else setJoke(nextJoke);
+    if (nextJoke) setJoke(nextJoke);
+    else setJoke("Could not find a joke!");
+  };
+
+  const getBeardJoke = () => {
+    setBothLoaded(() => false);
+    getBeard();
+    getJoke();
+  };
+
+  const update = () => {
+    setBeardReady(() => true);
+    if (!bothLoaded) setBothLoaded(() => true);
   };
 
   return (
-    <>
-      <Loader loaded={loaded} />
+    <Container maxWidth="xs">
+      <Stack>
+        <Stack alignItems={"center"}>
+          <Box height={350} width={350}>
+            {!beardReady && (
+              <Box position={"absolute"}>
+                <Skeleton
+                  variant="rectangular"
+                  animation="pulse"
+                  height={350}
+                  width={350}
+                />
+              </Box>
+            )}
+            {beardSrc && (
+              <img
+                height={350}
+                width={350}
+                style={
+                  beardReady
+                    ? { display: "block", borderRadius: 5 }
+                    : { display: "none" }
+                }
+                src={beardSrc}
+                alt="bearded person courtesy of https://placebeard.it/"
+                onLoad={() => update()}
+              />
+            )}
+          </Box>
 
-      <section className={loaded ? "content fade-in" : "content"}>
-        <header>
-          <h1>Dad Jokes</h1>
-        </header>
-        <img
-          id="beard-box"
-          src="https://placebeard.it/g/360/480/notag"
-          alt="bearded fellow"
-          onLoad={() => setLoaded(true)}
-        />
+          <Box
+            width={300}
+            marginTop={2}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {bothLoaded && joke ? (
+              <Typography color={theme.palette.text.primary}>{joke}</Typography>
+            ) : (
+              <Box width="100%">
+                <Skeleton variant="text" />
+                <Skeleton variant="text" />
+                <Skeleton variant="text" />
+              </Box>
+            )}
+          </Box>
+        </Stack>
 
-        <footer>
-          <p id="joke-box">{joke}</p>
-        </footer>
-
-        <button onClick={() => window.location.reload()}>
-          Get another dad joke!
-        </button>
-      </section>
-    </>
+        <Box
+          position="fixed"
+          width={350}
+          bottom={25}
+          left={"50%"}
+          marginLeft={"-175px"}
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Button fullWidth onClick={() => getBeard()} variant="outlined">
+                new beard
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button fullWidth onClick={() => getJoke()} variant="outlined">
+                new joke
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                fullWidth
+                onClick={() => getBeardJoke()}
+                variant="outlined"
+              >
+                new beard and dad joke
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </Stack>
+    </Container>
   );
 };
 
