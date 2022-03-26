@@ -46,7 +46,7 @@ const App: React.FC = (): JSX.Element => {
 
   const update = () => {
     setBeardReady(() => true);
-    if (!bothLoaded) setBothLoaded(() => true);
+    setBothLoaded(() => true);
   };
 
   return (
@@ -58,7 +58,7 @@ const App: React.FC = (): JSX.Element => {
               <Box position={"absolute"}>
                 <Skeleton
                   variant="rectangular"
-                  animation="pulse"
+
                   height={350}
                   width={350}
                 />
