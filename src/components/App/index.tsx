@@ -51,17 +51,12 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <Container maxWidth="xs">
-      <Stack>
+      <Stack minHeight={625} maxHeight={800} justifyContent="space-between">
         <Stack alignItems={"center"}>
           <Box height={350} width={350}>
             {!beardReady && (
               <Box position={"absolute"}>
-                <Skeleton
-                  variant="rectangular"
-
-                  height={350}
-                  width={350}
-                />
+                <Skeleton variant="rectangular" height={350} width={350} />
               </Box>
             )}
             {beardSrc && (
@@ -99,35 +94,23 @@ const App: React.FC = (): JSX.Element => {
           </Box>
         </Stack>
 
-        <Box
-          position="fixed"
-          width={350}
-          bottom={25}
-          left={"50%"}
-          marginLeft={"-175px"}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button fullWidth onClick={() => getBeard()} variant="outlined">
-                new beard
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button fullWidth onClick={() => getJoke()} variant="outlined">
-                new joke
-              </Button>
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                fullWidth
-                onClick={() => getBeardJoke()}
-                variant="outlined"
-              >
-                new beard and dad joke
-              </Button>
-            </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Button fullWidth onClick={() => getBeard()} variant="outlined">
+              new beard
+            </Button>
           </Grid>
-        </Box>
+          <Grid item xs={6}>
+            <Button fullWidth onClick={() => getJoke()} variant="outlined">
+              new joke
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Button fullWidth onClick={() => getBeardJoke()} variant="outlined">
+              new beard and dad joke
+            </Button>
+          </Grid>
+        </Grid>
       </Stack>
     </Container>
   );
