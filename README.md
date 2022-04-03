@@ -4,7 +4,9 @@
 
 Combine the hilarity of fatherly humor with the rugged gravitas of facial hair in one simple application!
 
-[![demo](./assets/dad-joke-demo.gif)](https://comatosino.github.io/dad-jokes/)
+Built with TypeScript, React, and MUI.
+
+[![demo](./assets/dad-jokes-demo.gif)](https://comatosino.github.io/dad-jokes/)
 
 # Acknowledgements
 
